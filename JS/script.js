@@ -59,7 +59,7 @@ ScrollReveal().reveal('.home-content p, .about-content', { origin: 'right' });
 
 /*==================== typed js ====================*/
 const typed = new Typed('.multiple-text', {
-    strings: ['Frontend Developers', 'Car Assemblers', 'Student'],
+    strings: ['Frontend Developers', 'Perakit Mobil RC', 'Siswa'],
     typeSpeed: 100,
     backSpeed: 100,
     startDelay: 1000, // Mengganti backDelay menjadi startDelay
@@ -68,20 +68,40 @@ const typed = new Typed('.multiple-text', {
 });
 
 function sendwhatsapp(){
-    var phonenumber = "+6285172260115";
+      var phonenumber = "+6285172260115";
 
-    var fullName = document.querySelector(".fullName").value;
-    var emailAddress = document.querySelector(".emailAddress").value;
-    var mobileNumber = document.querySelector(".mobileNumber").value;
-    var country = document.querySelector(".country").value;
-    var message = document.querySelector(".message").value;
+      // Mendapatkan nilai dari input
+      var fullName = document.querySelector(".fullName").value;
+      var emailAddress = document.querySelector(".emailAddress").value;
+      var mobileNumber = document.querySelector(".mobileNumber").value;
+      var country = document.querySelector(".country").value;
+      var message = document.querySelector(".message").value;
 
-    var url = "https://wa.me/" + phonenumber + "?text="
-    +"*Name :* "+fullName+"%0a"
-    +"*Email Address :* "+emailAddress+"%0a"
-    +"*Mobile Number :* "+mobileNumber+"%0a"
-    +"*Country:* "+country+"%0a"
-    +"*Message :* "+message;
+      // Mengecek apakah ada input yang kosong
+      if (!fullName || !emailAddress || !mobileNumber || !country || !message) {
+        showPopup(); // Menampilkan pop-up jika ada input yang kosong
+        return; // Menghentikan eksekusi jika ada input yang kosong
+      }
 
-    window.open(url, '_blank').focus();
-  }
+      // Membuat URL WhatsApp dengan teks yang diisi
+      var url = "https://wa.me/" + phonenumber + "?text="
+        + "*Name :* " + fullName + "%0a"
+        + "*Email Address :* " + emailAddress + "%0a"
+        + "*Mobile Number :* " + mobileNumber + "%0a"
+        + "*Country:* " + country + "%0a"
+        + "*Message :* " + message;
+
+      // Membuka pesan di tab baru
+      window.open(url, '_blank').focus();
+    }
+
+    // Fungsi untuk menampilkan pop-up
+    function showPopup() {
+      document.getElementById("popupWarning").style.display = "block";
+    }
+
+    // Fungsi untuk menutup pop-up
+    function closePopup() {
+      document.getElementById("popupWarning").style.display = "none";
+    }
+
