@@ -1,3 +1,3 @@
 # Porfolio V1
 
-<!-- PORTFOLIO BERIKUT TENTANG DIRI SAYA , Terima Kasih telah berkunjung ke github saya terima kasih. -->
+`PORTFOLIO PERTAMA SAYA, Terima Kasih telah berkunjung ke github saya terima kasih.`
